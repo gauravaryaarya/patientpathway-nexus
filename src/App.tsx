@@ -12,6 +12,10 @@ import PatientDashboard from "./pages/patient/index";
 import DoctorDashboard from "./pages/doctor/index";
 import PharmacyDashboard from "./pages/pharmacy/index";
 import PatientRecords from "./pages/patient/records/index";
+import PatientAppointments from "./pages/patient/appointments/index";
+import BillingPage from "./pages/billing/index";
+import DiseasePredictionPage from "./pages/disease-prediction/index";
+import SettingsPage from "./pages/settings/index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,7 +35,7 @@ const App = () => (
             {/* Patient Routes */}
             <Route path="/patient" element={<DashboardLayout><PatientDashboard /></DashboardLayout>} />
             <Route path="/patient/records" element={<DashboardLayout><PatientRecords /></DashboardLayout>} />
-            <Route path="/patient/appointments" element={<DashboardLayout><div>Patient Appointments</div></DashboardLayout>} />
+            <Route path="/patient/appointments" element={<DashboardLayout><PatientAppointments /></DashboardLayout>} />
             <Route path="/patient/vitals" element={<DashboardLayout><div>Patient Vitals</div></DashboardLayout>} />
             
             {/* Doctor Routes */}
@@ -45,9 +49,9 @@ const App = () => (
             <Route path="/pharmacy/prescriptions" element={<DashboardLayout><div>Pharmacy Prescriptions</div></DashboardLayout>} />
             
             {/* Common Routes */}
-            <Route path="/billing" element={<DashboardLayout><div>Billing</div></DashboardLayout>} />
-            <Route path="/disease-prediction" element={<DashboardLayout><div>Disease Prediction</div></DashboardLayout>} />
-            <Route path="/settings" element={<DashboardLayout><div>Settings</div></DashboardLayout>} />
+            <Route path="/billing" element={<DashboardLayout><BillingPage /></DashboardLayout>} />
+            <Route path="/disease-prediction" element={<DashboardLayout><DiseasePredictionPage /></DashboardLayout>} />
+            <Route path="/settings" element={<DashboardLayout><SettingsPage /></DashboardLayout>} />
             
             {/* Catch All */}
             <Route path="*" element={<NotFound />} />

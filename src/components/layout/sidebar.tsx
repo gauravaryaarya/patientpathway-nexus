@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { 
   User, 
@@ -15,11 +15,13 @@ import {
   FileText,
   Heart,
   Menu,
-  ChevronRight
+  ChevronRight,
+  LogOut
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/mode-toggle';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { toast } from 'sonner';
 
 type SidebarProps = {
   className?: string;
@@ -115,6 +117,7 @@ const navItems: NavItem[] = [
 
 export function Sidebar({ className }: SidebarProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [userRole, setUserRole] = useState<'patient' | 'doctor' | 'pharmacy' | 'admin'>('patient');
   const [collapsed, setCollapsed] = useState(false);
 
@@ -122,6 +125,18 @@ export function Sidebar({ className }: SidebarProps) {
   const filteredNavItems = navItems.filter(
     item => item.role === userRole || item.role === 'all'
   );
+
+  const handleLogout = () => {
+    // Clear authentication data
+    localStorage.removeItem('healthsync_auth');
+    localStorage.removeItem('healthsync_user_role');
+    
+    // Show success message
+    toast.success("Logged out successfully");
+    
+    // Redirect to login
+    navigate('/auth/login');
+  };
 
   return (
     <div
@@ -204,6 +219,14 @@ export function Sidebar({ className }: SidebarProps) {
             </span>
           )}
         </div>
+        <Button 
+          variant="ghost" 
+          className="w-full mt-2 text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center justify-center gap-2" 
+          onClick={handleLogout}
+        >
+          <LogOut className="h-4 w-4" />
+          {!collapsed && <span>Logout</span>}
+        </Button>
       </div>
     </div>
   );
