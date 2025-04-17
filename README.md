@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# Vaidika : Vedas to Vitals.
 
-## Project info
+Vaidika is an intelligent healthcare web application built for the Vihaan 8.0 Hackathon under the **Healthcare** track. It combines **modern AI technology** with **traditional insights** to offer a seamless, intuitive, and powerful patient management system.
 
-**URL**: https://lovable.dev/projects/b1c67bbe-9633-4520-9514-d846f22affab
+---
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+✅ **Medical Records**  
+➕ Upload, view, and categorize prescriptions, PDFs, and images.  
+🔒 Secure access with edit/delete control.
 
-**Use Lovable**
+✅ **Appointments & Booking**  
+📆 View, book, reschedule, and cancel appointments.  
+👨‍⚕️ Live doctor schedule & slot booking.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b1c67bbe-9633-4520-9514-d846f22affab) and start prompting.
+✅ **Vitals Monitoring**  
+📈 Real-time & manual input: BP, HR, SPO2, Glucose, etc.  
+📊 Graphs & historical trends per patient.
 
-Changes made via Lovable will be committed automatically to this repo.
+✅ **Billing System**  
+🧾 Dynamic invoice generation with export options.  
+💳 Payment status, line items, GST simulation.
 
-**Use your preferred IDE**
+✅ **Disease Prediction AI**  
+🧠 Symptom-based prediction using a Flask-based ML API.  
+📍 Diagnoses & accuracy scores with doctor suggestion.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+✅ **Admin + Patient Dashboards**  
+👥 Role-based access & clean navigation.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Frontend        | Backend        | ML API         | Database     | Styling      | Auth & Realtime |
+|----------------|----------------|----------------|--------------|--------------|-----------------|
+| React.js        | Node.js / Spring Boot | Flask (Python) | MySQL       | Tailwind | Firebase |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Screenshots
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+| Dashboard | Booking | Medical Records | AI Prediction |
+|----------|---------|------------------|----------------|
+| ![ss1]() | ![ss2]() | ![ss3]()         | ![ss4]()       |
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Getting Started
 
-**Use GitHub Codespaces**
+```bash
+# Clone the repo
+git clone 
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Frontend
+cd Client
+npm install
+npm start
 
-## What technologies are used for this project?
+# Backend 
+cd Server
+npm install
+npm start
 
-This project is built with .
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b1c67bbe-9633-4520-9514-d846f22affab) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
