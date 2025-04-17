@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,7 @@ import LoginPage from "./pages/auth/login";
 import PatientDashboard from "./pages/patient/index";
 import DoctorDashboard from "./pages/doctor/index";
 import PharmacyDashboard from "./pages/pharmacy/index";
+import PatientRecords from "./pages/patient/records/index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,7 +30,7 @@ const App = () => (
             
             {/* Patient Routes */}
             <Route path="/patient" element={<DashboardLayout><PatientDashboard /></DashboardLayout>} />
-            <Route path="/patient/records" element={<DashboardLayout><div>Patient Records</div></DashboardLayout>} />
+            <Route path="/patient/records" element={<DashboardLayout><PatientRecords /></DashboardLayout>} />
             <Route path="/patient/appointments" element={<DashboardLayout><div>Patient Appointments</div></DashboardLayout>} />
             <Route path="/patient/vitals" element={<DashboardLayout><div>Patient Vitals</div></DashboardLayout>} />
             
