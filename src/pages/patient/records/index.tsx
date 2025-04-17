@@ -40,8 +40,8 @@ const PatientRecords: React.FC = () => {
   const [records, setRecords] = useState<MedicalRecord[]>(mockMedicalRecords);
   const [selectedRecord, setSelectedRecord] = useState<MedicalRecord | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filterDepartment, setFilterDepartment] = useState('');
-  const [filterDoctor, setFilterDoctor] = useState('');
+  const [filterDepartment, setFilterDepartment] = useState('all');
+  const [filterDoctor, setFilterDoctor] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [showRecordDetailsDialog, setShowRecordDetailsDialog] = useState(false);
@@ -51,8 +51,8 @@ const PatientRecords: React.FC = () => {
     return (
       (record.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       record.description.toLowerCase().includes(searchQuery.toLowerCase())) &&
-      (filterDepartment === '' || record.department === filterDepartment) &&
-      (filterDoctor === '' || record.doctor === filterDoctor)
+      (filterDepartment === 'all' || record.department === filterDepartment) &&
+      (filterDoctor === 'all' || record.doctor === filterDoctor)
     );
   });
   
@@ -144,7 +144,7 @@ const PatientRecords: React.FC = () => {
               <SelectValue placeholder="Department" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Departments</SelectItem>
+              <SelectItem value="all">All Departments</SelectItem>
               {departments.map(dept => (
                 <SelectItem key={dept} value={dept}>{dept}</SelectItem>
               ))}
@@ -156,7 +156,7 @@ const PatientRecords: React.FC = () => {
               <SelectValue placeholder="Doctor" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Doctors</SelectItem>
+              <SelectItem value="all">All Doctors</SelectItem>
               {doctors.map(doc => (
                 <SelectItem key={doc} value={doc}>{doc}</SelectItem>
               ))}
