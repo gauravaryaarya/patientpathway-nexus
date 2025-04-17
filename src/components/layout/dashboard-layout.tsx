@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Sidebar } from './sidebar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 type DashboardLayoutProps = {
@@ -9,6 +9,18 @@ type DashboardLayoutProps = {
 };
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    // Check if user is authenticated
+    const isAuthenticated = localStorage.getItem('healthsync_auth') === 'true';
+    
+    if (!isAuthenticated) {
+      // Redirect to login if not authenticated
+      navigate('/auth/login');
+    }
+  }, [navigate]);
+
   return (
     <div className="flex min-h-screen bg-muted/40 dark:bg-background">
       <Sidebar />
