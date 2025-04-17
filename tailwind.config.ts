@@ -61,6 +61,33 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// HealthSync custom colors
+				health: {
+					primary: '#0EA5E9', // Main blue
+					secondary: '#1EAEDB', // Secondary blue
+					accent: '#8B5CF6', // Purple accent
+					warning: '#F97316', // Orange for warnings
+					success: '#10B981', // Green for success
+					danger: '#EF4444', // Red for critical alerts
+					light: '#F1F5F9', // Light background
+					dark: '#1E293B', // Dark background
+				},
+				patient: {
+					DEFAULT: '#0EA5E9', // Patient module color
+					light: '#E0F2FE',
+				},
+				doctor: {
+					DEFAULT: '#8B5CF6', // Doctor module color
+					light: '#EDE9FE',
+				},
+				pharmacy: {
+					DEFAULT: '#10B981', // Pharmacy module color
+					light: '#D1FAE5',
+				},
+				admin: {
+					DEFAULT: '#F97316', // Admin module color
+					light: '#FFEDD5',
 				}
 			},
 			borderRadius: {
