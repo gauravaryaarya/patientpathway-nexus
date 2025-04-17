@@ -337,7 +337,7 @@ export default function DiseasePredictionPage() {
                   <div className="flex justify-between text-xs text-muted-foreground mt-1">
                     <span>35°C</span>
                     <span className="text-blue-500">Normal: 36.1-37.2°C</span>
-                    <span className="text-red-500">Fever: >37.5°C</span>
+                    <span className="text-red-500">Fever: {'>'}37.5°C</span>
                     <span>42°C</span>
                   </div>
                 </div>
